@@ -8,7 +8,7 @@ function digitPerkalianMinimum(angka) {
     for (var j = angka; j > 0; j--) {
       if (i * j === angka) {
         
-        // change to string to check lenth property
+        // change to string to check length property
         var factors = i.toString() + j.toString();
         factorsArr.push(factors);
       }
