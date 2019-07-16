@@ -25,6 +25,7 @@ function cariModus(arr) {
   var isSame = false;
   for (var k = 0; k < arr.length; k++) {
     sameNumber += arr[k];
+    // condition for same numbers
     isSame = sameNumber / arr.length === arr[k]
 
 
