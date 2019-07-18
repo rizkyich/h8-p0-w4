@@ -8,7 +8,8 @@ function checkAB(num) {
     }
   }
 
-  // Find a position and b posotion to find distance 
+  // Find 'a' position and 'b' posotion
+  // Set disctane to three then return true  
   for (var j = 0; j < noSpaces.length; j++) {
     if (noSpaces[j] === 'a') {
       for (var k = j; k <= (j + 3); k++) {
