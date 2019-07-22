@@ -1,26 +1,35 @@
 function checkAB(num) {
   // you can only write your code here!
-  // split all characters into array except spaces ' ' 
-  var noSpaces = [];
+  // ini variable to store position A and B
+  var positionA = 0;
+  var positionB = 0;
+ 
+  // loop through to find the position
   for (var i = 0; i < num.length; i++) {
-    if (num[i] !== ' ') {
-      noSpaces.push(num[i]);
+    if (num[i] === 'a') {
+      positionA = i;
+    }
+    if (num[i] === 'b') {
+      positionB = i;
     }
   }
 
-  // Find 'a' position and 'b' posotion
-  // Set disctane to three then return true  
-  for (var j = 0; j < noSpaces.length; j++) {
-    if (noSpaces[j] === 'a') {
-      for (var k = j; k <= (j + 3); k++) {
-        if (noSpaces[k] === 'b') {
-          return true;
-        } 
-      }
-    }
+  // create new string contain letter from position A to posiiton B
+  var newStr = '';
+  newStr = num.substring(positionA, positionB);
+
+  // condition if new string length bigger than 3 and there is position B
+  // return true
+  if (newStr.length > 3 && positionB !== 0) {
+    return true;
   }
 
-  return false;
+  // conditionn if position B is empty or new string length is lower tahn 3
+  // return false 
+  if (newStr.length > 3 && positionB === 0 || newStr.length < 3) {
+    return false;
+  }
+  
 }
 
 // TEST CASES
