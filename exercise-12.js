@@ -6,6 +6,11 @@ function countProfit(shoppers) {
   ];
 
   // you can only write your code here!
+  if (shoppers.length === 0) {
+    return [];
+  }
+
+
   // init array to store object then return
   var profitArrObj = [];
 
@@ -22,21 +27,22 @@ function countProfit(shoppers) {
     profitArrObj.push(profitObj);
 
     // check all condition and assign it into object
+    var totalProfit = 0
     for (var j = 0; j < shoppers.length; j++) {
       var person = shoppers[j];
 
-      if (person.product === profitArrObj[i].product && person.amount < profitArrObj[i].leftOver) {
+      if (person.product === profitArrObj[i].product && person.amount <= profitArrObj[i].leftOver) {
+        // console.log(person.product)
         profitArrObj[i].shoppers.push(person.name);
         profitArrObj[i].leftOver -= person.amount;
-        profitArrObj[i].totalProfit = clothes[1] * shoppers[j].amount;
+
+        totalProfit = totalProfit + (listBarang[i][1] * shoppers[j].amount);
+        profitArrObj[i].totalProfit = totalProfit;
       }
     }
   }
-
-
-
+  
   return profitArrObj;
-
 }
 // TEST CASES
 console.log(
