@@ -5,7 +5,7 @@ function checkAB(num) {
     // find position a
     if (num[i] === 'a') {
 
-      // conditions 4 distance forward and backward if b found return true
+      // conditions 3 distance forward and backward if b found return true
       if (num[i + 4] === 'b' || num[i - 4] === 'b') {
         return true;
       } 
