@@ -1,13 +1,14 @@
 function checkAB(num) {
   // you can only write your code here!
-  // loop through array to find position a and b
-  for (var a = 0; a < num.length; a++) {
-    if (num[a] === 'a') {
-      for (var b = a; b <= (a + 4); b++) {
-        if (num[b] === 'b') {
-          return true;
-        }
-      }
+  // loop through array 
+  for (var i = 0; i < num.length; i++) {
+    // find position a
+    if (num[i] === 'a') {
+
+      // conditions 4 distance forward and backward if b found return true
+      if (num[i + 4] === 'b' || num[i - 4] === 'b') {
+        return true;
+      } 
     }
   }
 
@@ -20,3 +21,4 @@ console.log(checkAB('i am sick')); // false
 console.log(checkAB('you are boring')); // true
 console.log(checkAB('barbarian')); // true
 console.log(checkAB('bacon and meat')); // false
+console.log(checkAB('bbbbbbbbbba'));// true
